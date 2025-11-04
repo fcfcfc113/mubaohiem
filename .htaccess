@@ -1,12 +1,9 @@
-<IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
+# Bắt đầu cấu hình Laravel redirect vào /public
+RewriteEngine On
 
-    RewriteEngine On
+# Nếu truy cập thẳng vào file hoặc thư mục thật thì cho phép
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-
-    RewriteRule ^ index.php [L]
-</IfModule>
+# Còn lại thì chuyển hướng toàn bộ về thư mục /public
+RewriteRule ^(.*)$ public/$1 [L]
