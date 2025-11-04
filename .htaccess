@@ -1,11 +1,10 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
+Options -Indexes
+RewriteEngine On
+RewriteBase /
 
-    # Nếu truy cập vào file hoặc thư mục thật thì giữ nguyên
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+# Nếu không truy cập file hoặc thư mục thật
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-    # Còn lại thì chuyển hướng vào /public
-    RewriteRule ^(.*)$ public/$1 [L]
-</IfModule>
+# Thì chuyển hướng toàn bộ sang thư mục public
+RewriteRule ^(.*)$ public/$1 [L]
