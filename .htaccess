@@ -1,9 +1,11 @@
-# Redirect toàn bộ request từ gốc vào thư mục /public
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# Nếu truy cập vào file hoặc thư mục thật thì cho phép
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+    # Nếu truy cập vào file hoặc thư mục thật thì giữ nguyên
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
 
-# Còn lại thì chuyển hướng vào /public
-RewriteRule ^(.*)$ public/$1 [L]
+    # Còn lại thì chuyển hướng vào /public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
