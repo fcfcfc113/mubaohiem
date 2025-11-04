@@ -21,5 +21,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('public/js/product.js') }}"></script>
+    <script src="{{ asset('js/product.js') }}"></script>
 @endpush

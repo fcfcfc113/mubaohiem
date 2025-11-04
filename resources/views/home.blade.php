@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   </head>
   <body>
     <!-- Header -->
@@ -220,8 +220,8 @@
     <!-- slide show img -->
   <div class="hero-media" id="heroSlider">
     <div class="slider-stage">
-      <img src="{{ asset('public/images/nonbaohiem/anhlamro/main.jpeg') }}" alt="Hero 1" loading="lazy">
-      <img src="{{ asset('public/images/nonbaohiem/anhlamro/kurumi_couple.png') }}" alt="Hero 2" loading="lazy">
+      <img src="{{ asset('images/nonbaohiem/anhlamro/main.jpeg') }}" alt="Hero 1" loading="lazy">
+      <img src="{{ asset('images/nonbaohiem/anhlamro/kurumi_couple.png') }}" alt="Hero 2" loading="lazy">
     </div>
 
     <button class="slider-btn slider-prev text-dark" aria-label="Prev"><i class="bi bi-chevron-left"></i></button>

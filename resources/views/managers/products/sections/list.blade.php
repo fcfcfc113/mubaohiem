@@ -1,6 +1,6 @@
 @extends('managers.layouts.app')
 @push('styles')
-    <link href="{{ asset('public/css/checkout.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/checkout.css') }}" rel="stylesheet">
 @endpush
 @section('content')
     <div class="table-responsive">
@@ -132,5 +132,5 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('public/js/checkout.js') }}"></script>
+    <script src="{{ asset('js/checkout.js') }}"></script>
 @endpush
