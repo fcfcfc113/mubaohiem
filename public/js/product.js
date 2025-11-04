@@ -301,15 +301,15 @@ const CartModal = {
       syncFormState();
     });
 
-    // ===== Timer cho QR (60s) =====
+    // ===== Timer cho QR (120s) =====
     let _qrTimer = null;
-    let _qrLeft = 60;
+    let _qrLeft = 120;
 
     function stopQrTimer(){
       if(_qrTimer){ clearInterval(_qrTimer); _qrTimer = null; }
     }
 
-    function startQrTimer(seconds = 60){
+    function startQrTimer(seconds = 120){
       stopQrTimer();
       _qrLeft = seconds;
       $('#qrCountdown').text(_qrLeft);
@@ -405,8 +405,17 @@ const CartModal = {
           $('#qrAmount').text(VND(Number(d.totals?.total || 0)));
           $('#qrWrap').removeClass('d-none');
 
-          // chạy timer 60s → hết giờ reload
-          startQrTimer(60);
+            const qrEl = document.getElementById('qrTimerWrap');
+            if (qrEl) {
+                qrEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // (tuỳ chọn) highlight nhẹ QR khi cuộn tới
+                qrEl.style.transition = 'box-shadow 0.6s ease';
+                qrEl.style.boxShadow = '0 0 20px rgba(0, 200, 100, 0.4)';
+                setTimeout(() => qrEl.style.boxShadow = 'none', 1500);
+            }
+
+          // chạy timer 120s → hết giờ reload
+          startQrTimer(120);
           return false; // giữ modal mở
         } else {
           // COD: hiển thị đã xác nhận
