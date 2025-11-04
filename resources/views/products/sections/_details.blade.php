@@ -42,7 +42,7 @@
                     name="variant"
                     id="{{ $slug }}"
                     data-variant="{{ $shortName }}"
-                    data-image="{{ asset($imagePath) }}"
+                    data-image="{{ asset('public/'.$imagePath) }}"
                     @if ($main === 1) checked @endif
                 >
 

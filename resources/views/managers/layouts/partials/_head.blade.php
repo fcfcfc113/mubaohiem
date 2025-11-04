@@ -11,7 +11,7 @@
 
 
 <!-- Bootstrap core CSS -->
-<link href="{{ asset('assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
 <style>
     .bd-placeholder-img {
@@ -31,6 +31,6 @@
 
 
 <!-- Custom styles for this template -->
-<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+<link href="{{ asset('public/css/dashboard.css') }}" rel="stylesheet">
 
 </head>

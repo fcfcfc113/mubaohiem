@@ -4,7 +4,7 @@
             $mainImage = '';
             foreach ($product_list as $product) {
                 if ($product['main'] === 1) {
-                    $mainImage = asset($product['thumbnail']);
+                    $mainImage = asset('public/'.$product['thumbnail']);
                     break;
                 }
             }
@@ -24,8 +24,8 @@
             <div class="col-3">
                 <img
                     class="thumb w-100 @if ($product['main'] === 1) active @endif"
-                    src="{{ asset($imagePath) }}"
-                    data-big="{{ asset($imagePath) }}"
+                    src="{{ asset('public/'.$imagePath) }}"
+                    data-big="{{ asset('public/'.$imagePath) }}"
                     data-variant="{{ $shortName }}"
                     alt="{{ $name }}"
                 >

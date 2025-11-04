@@ -1,7 +1,7 @@
 <div class="hero-media" id="heroSlider">
   <div class="slider-stage">
     @foreach ( $banners as $banner )
-      <img src="{{ asset( $banner['image'] ) }}" alt="Hero {{ $banner['id'] }}" loading="lazy" >
+      <img src="{{ asset( 'public/'.$banner['image'] ) }}" alt="Hero {{ $banner['id'] }}" loading="lazy" >
     @endforeach
   </div>
 
