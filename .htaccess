@@ -1,11 +1,14 @@
-Options -Indexes
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
 
-# Nếu là request tới file hoặc thư mục thật thì bỏ qua
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+    RewriteEngine On
 
-# Còn lại thì chuyển hướng vào thư mục public
-RewriteRule ^(.*)$ public/$1 [L]
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
