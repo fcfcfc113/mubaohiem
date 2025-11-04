@@ -419,6 +419,8 @@ const CartModal = {
           if(toastEl){
             toastEl.querySelector('.toast-body').textContent = `Đơn ${d.order_code || d.order_id} đã được xác nhận.`;
             new bootstrap.Toast(toastEl).show();
+            // reload sau 3s
+            setTimeout(()=>{ location.reload(); }, 3000);
           }
           return false;
         }
