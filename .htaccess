@@ -1,9 +1,9 @@
-# Bắt đầu cấu hình Laravel redirect vào /public
+# Redirect toàn bộ request từ gốc vào thư mục /public
 RewriteEngine On
 
-# Nếu truy cập thẳng vào file hoặc thư mục thật thì cho phép
+# Nếu truy cập vào file hoặc thư mục thật thì cho phép
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Còn lại thì chuyển hướng toàn bộ về thư mục /public
+# Còn lại thì chuyển hướng vào /public
 RewriteRule ^(.*)$ public/$1 [L]
