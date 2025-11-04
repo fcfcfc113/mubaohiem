@@ -2,9 +2,10 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /
 
-# Nếu không truy cập file hoặc thư mục thật
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# Nếu là request tới file hoặc thư mục thật thì bỏ qua
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-# Thì chuyển hướng toàn bộ sang thư mục public
+# Còn lại thì chuyển hướng vào thư mục public
 RewriteRule ^(.*)$ public/$1 [L]
