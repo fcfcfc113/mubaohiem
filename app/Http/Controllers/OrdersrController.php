@@ -21,16 +21,29 @@ class OrdersrController extends Controller
         $payment_method = $requestedData['payment_method'] ?? 'cod';
         // Implement order preparation logic here
         // step 1: check customer exists or create new
-        $customerChecked = Customer::firstOrCreate(
-            ['phone' => $shippingArr['phone'] ?? ''],
-            [
-                'name' => $shippingArr['namefull_name'] ?? 'Khách hàng',
-                'email' => $shippingArr['email'] ?? '',
+        $email = $shippingArr['email'] ?? null;
+        $phone = $shippingArr['phone'] ?? null;
+
+        $customerChecked = null;
+
+        if ($email) {
+            $customerChecked = Customer::where('email', $email)->first();
+        }
+
+        if (!$customerChecked && $phone) {
+            $customerChecked = Customer::where('phone', $phone)->first();
+        }
+
+        if (!$customerChecked) {
+            $customerChecked = Customer::create([
+                'name' => $shippingArr['full_name'] ?? 'Khách hàng',
+                'email' => $email,
+                'phone' => $phone,
                 'address' => $shippingArr['address'] ?? '',
                 'province' => $shippingArr['province'] ?? '',
                 'district' => $shippingArr['district'] ?? '',
-            ]
-        );
+            ]);
+        }
         $customerId = $customerChecked->id;
         // step 2: create order from cart
         $order = new Order();

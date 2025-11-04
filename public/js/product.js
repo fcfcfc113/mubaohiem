@@ -1,7 +1,7 @@
 // =================== CONFIG ===================
 const SHIP_THRESHOLD = 150000;   // >= 150k freeship
 const SHIP_FEE       = 30000;    // 30k nếu chưa đủ ngưỡng
-const BANK_OFF       = 0.15;     // -8% khi chuyển khoản (giá trị 0.15 = 15%)
+const BANK_OFF       = 0.15;     // -15% khi chuyển khoản (giá trị 0.15 = 15%)
 
 // (tuỳ chọn) Bảng coupon demo
 const COUPONS = {
@@ -419,6 +419,8 @@ const CartModal = {
           if(toastEl){
             toastEl.querySelector('.toast-body').textContent = `Đơn ${d.order_code || d.order_id} đã được xác nhận.`;
             new bootstrap.Toast(toastEl).show();
+            // reload trang sau vài giây
+            setTimeout(()=>{ location.reload(); }, 2000);
           }
           return false;
         }
