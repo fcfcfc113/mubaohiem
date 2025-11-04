@@ -1,0 +1,183 @@
+:root{ --brand:#0ea5e9; --brand-dark:#0284c7; --ink:#111827; --bg:#f8fafc; --card:#fff; --ring:rgba(14,165,233,.25); --radius:18px; }
+*{box-sizing:border-box}
+body{font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.navbar{backdrop-filter:saturate(180%) blur(8px);background:rgba(255,255,255,.7);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-link{font-weight:500;color:#334155}.nav-link:hover{color:var(--brand)}
+.hero{position:relative;border-radius:calc(var(--radius)+6px);overflow:hidden;background:linear-gradient(180deg,rgba(2,132,199,.10),rgba(2,132,199,0))}
+.hero-media{position:relative;background:#fafbfb}
+.card-soft{background:var(--card);border:1px solid rgba(2,6,23,.06);box-shadow:0 10px 30px rgba(2,6,23,.06);border-radius:var(--radius)}
+.badge-soft{background:rgba(14,165,233,.1);color:var(--brand-dark);border:1px solid rgba(14,165,233,.25);font-weight:600}
+.price{font-size:clamp(22px,4vw,34px);font-weight:800;letter-spacing:-.02em}
+.strike{color:#94a3b8;text-decoration:line-through}
+.rating i{color:#fbbf24}
+.thumb{border:1px solid rgba(2,6,23,.08);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s;background:#fff}
+.thumb:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(2,6,23,.08)}
+.thumb.active{outline:2px solid var(--brand);box-shadow:0 0 0 6px var(--ring)}
+.btn-brand{background:var(--brand);border-color:var(--brand);font-weight:700}
+.btn-brand:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.btn-outline-brand{border-color:var(--brand);color:var(--brand);font-weight:600}
+.btn-outline-brand:hover{background:var(--brand);color:#fff}
+.sticky-buy{position:sticky;bottom:0;z-index:1030;backdrop-filter:saturate(180%) blur(8px);background:rgba(255,255,255,.9);border-top:1px solid rgba(0,0,0,.06)}
+#main-image{transition:opacity .25s ease}
+#main-image.fade{opacity:0}
+.thumb img,.thumb{width:100%;height:100px;object-fit:cover;border-radius:12px}
+
+/* Voucher */
+.voucher-box{border:1px solid rgba(14,165,233,.3);border-radius:14px;background:#fff;padding:16px 20px;margin-top:20px}
+.voucher-box h6{font-weight:700;color:var(--brand-dark);margin-bottom:10px}
+.voucher-item{display:flex;align-items:center;justify-content:space-between;border:1px dashed rgba(14,165,233,.5);border-radius:10px;padding:10px 14px;margin-bottom:10px;background:rgba(240,249,255,.5);transition:all .2s ease}
+.voucher-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(14,165,233,.15)}
+.voucher-left{display:flex;align-items:center;gap:10px}
+.voucher-icon{width:32px;height:32px;display:grid;place-items:center;border-radius:8px;background:var(--brand);color:#fff;font-size:16px}
+.voucher-code{font-weight:700;color:var(--brand-dark);background:#fff;border:1px solid rgba(14,165,233,.3);padding:3px 8px;border-radius:6px;cursor:pointer;transition:all .2s}
+.voucher-code:hover{background:var(--brand);color:#fff}
+.voucher-desc{font-size:14px;color:#475569;margin-bottom:0}
+
+/* Cart modal list */
+.cart-item{display:flex; gap:12px; align-items:center; border:1px solid rgba(2,6,23,.06); border-radius:12px; padding:10px}
+.cart-thumb{width:72px; height:72px; border-radius:10px; overflow:hidden; flex:0 0 72px; border:1px solid rgba(2,6,23,.06)}
+.cart-thumb img{width:100%; height:100%; object-fit:cover}
+.cart-title{font-weight:600}
+.cart-variant{font-size:12px; color:#64748b}
+.cart-price{font-weight:700}
+.qty-box{display:inline-flex; border:1px solid #e5e7eb; border-radius:8px; overflow:hidden}
+.qty-box input{width:52px; text-align:center; border:none}
+.qty-box .btn{border:0}
+
+/* Reviews */
+.rv-card {
+border: 1px solid rgba(2,6,23,.06);
+border-radius: 12px;
+padding: 16px;
+}
+.rv-header {
+display: flex;
+gap: 12px;
+align-items: center;
+}
+.rv-avatar {
+width: 44px;
+height: 44px;
+border-radius: 50%;
+overflow: hidden;
+flex-shrink: 0;
+background: #e2e8f0;
+color: #334155;
+font-weight: 700;
+display: grid;
+place-items: center;
+font-size: 18px;
+text-transform: uppercase;
+}
+.rv-avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.rv-info {
+flex-grow: 1;
+}
+.rv-name {
+font-weight: 600;
+font-size: 15px;
+}
+.rv-badge {
+background: rgba(34,197,94,.12);
+color: #16a34a;
+border: 1px solid rgba(34,197,94,.3);
+font-size: 12px;
+padding: 2px 6px;
+border-radius: 6px;
+}
+.rv-stars {
+color: #fbbf24;
+font-size: 14px;
+}
+.rv-gallery {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 10px;
+}
+.rv-thumb {
+width: 80px;
+height: 80px;
+border-radius: 8px;
+overflow: hidden;
+border: 1px solid rgba(0,0,0,.1);
+cursor: pointer;
+position: relative;
+}
+.rv-thumb img, .rv-thumb video {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.rv-thumb .rv-play {
+position: absolute;
+inset: auto 0 0 0;
+background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+color: #fff;
+font-size: 12px;
+text-align: center;
+}
+
+/* === Hero Slider === */
+.hero-media{
+position: relative;
+background: #fefeff;
+border-radius: calc(var(--radius) + 6px);
+overflow: hidden;
+aspect-ratio: 16 / 9;
+min-height: 220px;
+}
+.hero-media .slider-stage{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+.hero-media .slider-stage img{
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover !important;
+object-position: center center;
+opacity: 0;
+transition: opacity .6s ease;
+background: #f6f6f7;
+}
+.hero-media .slider-stage img.active{
+opacity:1;
+}
+
+/* Controls */
+.hero-media .slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+border:0;
+width:44px;height:44px;
+display:grid;place-items:center;
+border-radius:999px;
+background:rgba(255,255,255,.8);
+color:#ffffff;
+box-shadow:0 6px 18px rgba(2,6,23,.15);
+}
+.hero-media .slider-prev{ left:12px; }
+.hero-media .slider-next{ right:12px; }
+.hero-media .slider-btn:hover{ background:#fff; }
+
+/* Dots */
+.hero-media .slider-dots{
+position:absolute; left:0; right:0; bottom:12px;
+display:flex; gap:8px; justify-content:center; align-items:center;
+}
+.hero-media .slider-dots button{
+width:8px; height:8px; border-radius:999px; border:0;
+background:rgba(255,255,255,.6);
+}
+.hero-media .slider-dots button.active{
+width:22px; height:8px; border-radius:999px;
+background:#fff;
+}
